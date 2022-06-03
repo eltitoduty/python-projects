@@ -1,0 +1,996 @@
+PYTHON
+
+holaaaa
+Lenguaje de programacion orientado a objetos
+
+>>> es el prompt (donde se introduce la instruccion) (Enter para ejecutar) (cada instruccion en una linea)
+
+# para hacer comentarios
+
+""" al principio y """ al final para hacer comentarios tochos (multilinea)
+
+\ para hacer un salto de linea pero sigues en la "misma linea"
+
+En el Sublime Text, para ponerlo como Python: Tools -> SublimeREPL -> Python -> Python
+
+Para guardar el codigo: File -> Save as -> Eliges la carpeta -> Pones el nombre: nombre_ejercicio_1.py -> Guardar
+
+Para imprimir en consola: Ctrl + B ó Tools -> Build     Antes has tenido que guardar los cambios -> Ctrl + S ó Save 
+
+Para la consola "interactiva": Ctrl + Alt + B
+
+Para abrir un archivo ya creado: Abres Sublime Text -> File -> Open File -> Eliges
+
+Para aumentar tamaño del texto: Ctrl + Rueda raton
+
+Para abrir la consola: Tools -> SublimeREPL -> Python -> Python-RUN current file
+
+Para salto de linea en pantalla: \n
+
+Para seleccionar todo el codigo: Ctrl + A
+
+
+
+OPERADORES:
+ % (Operador modulo) devuelve el resto de una division
+ ** (Exponente) 
+ // (Division entera) devuelve el numero entero de una division
+ = (Operador asignacion) para asignar valores
+ == (Operador comparacion) para comparar si dos valores son iguales
+ != (Operador diferenciacion) para comparar si dos valores son distintos
+ += operador incremento y -= operador decremento
+ is e is not
+
+
+
+OPERADORES LOGICOS:
+ and (Operador logico) se deben cumplir todas las condiciones
+ or (Operador logico) se debe cumplir una de las condiciones
+
+
+
+OPERADOR in :
+
+ in (elemento1,elemento2,...)
+
+ Compara lo almacenado en una variable con esos elementos 
+
+
+
+DECLARAR VARIABLE:
+ Una variable debe empezar por una letra minuscula o mayuscula, solo puede contener letras, cifras y el barra baja.
+ El tipo de la variable lo establece el contenido
+ Int es entero, float es decimal, str es texto (este va entre comillas " ")
+ Si ponemos tripe comilla ("""   """) se poducen 3 saltos de linea, es para crear un texto largo
+
+
+
+FUNCION type() :
+
+ type(nombre_variable)
+
+ Te dice el tipo de variable que introduces
+
+
+
+FUNCION print() :
+
+ print(nombre_variable)
+
+ Para imprimir en consola lo que hay almacenado dentro de la variable o del texto que escribas dentro
+ 
+ Para que vaya todo en la misma linea cuando esta en un bucle: print(nombre_variable, end="")            -> Si dejas un espacio entre las comillas, habra un espacio entre las impresiones
+ 
+ Para concatenar cosas: print("texto", variable, "texto")                                                -> Puedes ir concatenando lo que quieras, tambien se puede hacer con el +
+
+
+
+FUNCIONES :
+
+ def nombre_funcion():                   -> Lo del parentesis se llama zona de parametros, puede ir vacio o lleno. Si hay mas de uno ha de ir separado por una coma (,)
+ 	instruccion1             
+ 	instruccion2
+ 	...
+ 	return variable_a_devolver        -> Opcional
+
+ Realizan una tarea especifica. Pueden devolver valores y tener parametros.
+
+ Para ejecutarla o llamarla: nombre_funcion()
+
+ Se pueden declarar las variables dentro de la propia funcion (en las instrucciones) o en la zona de parametros (ahi es mejor porque cada vez que la llames, esas variables pueden cambiar de valor)
+ Cuando llamas a la funcion, simplemente pones el valor que quieres que tomen esas variables 
+ Puedes combinar los parametros (numeros, textos, etc)
+
+ Para imprimir lo que devuelve una funcion con el return: print(nombre_funcion())
+
+
+
+LISTAS(VECTORES) :
+
+ nombre_lista=[elemento1,elemento2,...]
+
+ Permiten almacenar muchos valores y pueden ser de diferentes tipos. Se pueden expandir dinamicamente añadiendo nuevos valores.
+ El indice es la posicion dentro de la lista (empieza por la posicion cero [0])
+
+ Para imprimir una lista entera:  print(nombre_lista[:])
+
+ Para imprimir un elemento en concreto de la lista:  print(nombre_lista[posicion])
+
+ Para imprimir una porcion de lista:  print(nombre_lista[posicioninicial:posicionfinal])    -> Imprime todas las posiciones incluidas en ese rango excepto la posicionfinal, es decir, desde posicioninicial hasta poicionfinal-1
+
+ Para agregar mas elementos en una lista, usamos la funcion append() , y lo agrega al final:  nombre_lista.append(elemento_a_agregar)  
+
+ Para agregar mas elementos en una lista, usamos la funcion insert() , y lo agrega donde indiques:  nombre_lista.insert(posicion,elemento_a_agregar)
+
+ Para agregar varios elementos a una lista, usamos la funcion extend() :  nombre_lista.extend([elemnto3,elemento4,..])   -> Es como concatenar una nueva lista a la anterior
+
+ Para obtener el indice o posicion que tiene un elemento, usamos la funcion index() :  print(nombre_lista.index(elemento_buscado))   -> Si mas de un elemento tiene el mismo valor, te imprime la posicion del primero que se encuentra
+
+ Para comprobar si un elemento se encuentra o no en una lista, usamos la funcion in :  print(elemento_buscado in nombre_lista)   -> Devuelve/Imprime un True si está y un False si no
+
+ Para eliminar un elemento de una lista, usamos la funcion remove() :  nombre_lista.remove(elemento_eliminar)
+
+ Para eliminar el ultimo elemento de una lista, usamos la funcion pop() :  nombre_lista.pop()
+
+ Para unir dos listas ya declaradas, se pueden sumar:  nombre_lista3=nombre_lista1+nombre_lista2
+
+ Para repetir una lista n veces, usamos *:  nombre_lista=[elemento1,elemento2,..] * n    -> La imprime repitiendola n veces
+
+
+
+TUPLAS:
+
+ nombre_tupla=(elemento1,elemento2,...)
+ 
+ Listas inmutables (no se puede modificar despues de crearla). Se pueden extraer porciones pero produce una nueva tupla. 
+ Son mas rapidas de ejecutar que una lista, ocupan menos espacio (mayor optimizacion), permiten formatear cadenas y se pueden utilizar como claves en un diccionario
+ El indice es la posicion dentro de la tupla (empieza por la posicion cero [0])
+
+ Para imprimir una tupla entera:  print(nombre_tupla[:])
+
+ Para imprimir un elemento en concreto de la tupla:  print(nombre_tupla[posicion])
+
+ Para convertir tuplas en listas, usamos list:  creamos una lista nombre_lista -> nombre_lista=list(nombre_tupla)
+
+ Para convertir listas en tuplas, usamos tuple:  creamos una tupla nombre_tupla -> nombre_tupla=tuple(nombre_lista)
+
+ Para comprobar si un elemento se encuentra o no en una tupla, usamos la funcion in :  print(elemento_buscado in nombre_tupla)    -> Devuelve/Imprime un True si está y un False si no
+
+ Para averigüar cuantos elementos que le preguntemos se encuentran dentro de una tupla, usamos count() :  print(nombre_tupla.count(elemento_buscado))    -> Imprime el numero de veces que se repite, es decir, las cuenta
+
+ Para saber la longitud de la tupla, usamos len() :  print(len(nombre_tupla))    -> Te imprime el numero de elementos que tiene, es decir, la longitud
+
+ Para crear una tupla unitaria:  nombre_tupla=(elemento1,)
+
+ Para desempaquetar una tupla:  creamos una tupla nombre_tupla -> creas varias variables variable1, variable2, variable3 -> variable1, variable2, variable3=nombre_tupla      -> Te asocia cada elemento de la tupla con la variable en orden (el elemento 1 con la variable1, el 2 con la 2,...etc)
+
+ Para obtener el indice o posicion que tiene un elemento, usamos la funcion index() :  print(nombre_tupla.index(elemento_buscado))    -> Si mas de un elemento tiene el mismo valor, te imprime la posicion del primero que se encuentra
+
+
+
+DICCIONARIOS:
+
+ nombre_diccionario={clave1:valor1,clave2:valor2,clave3:valor3,...} 
+
+ Son parecidos a las listas y tuplas pero cuando almacena los datos, lo hace con una asociacion de tipo clave:valor (a cada valor que almacenamos en el diccionario, se le asigna una clave unica)
+ Permiten almacenar muchos valores y pueden ser de diferentes tipos (incluso se pueden almacenar listas, tuplas u otros diccionarios, y ademas se pueden combinar)
+ El orden con el que se almacenan los valores/elementos da igual, no estan ordenados
+
+ Para acceder a un elemento concreto, preguntamos por la clave:  print(nombre_diccionario[clave])
+
+ Para acceder a un diccionario entero:  print(nombre_diccionario)
+
+ Para agregar mas elementos:  nombre_diccionario[clave_nueva]=valor_nuevo
+
+ Para modificar/asignar un valor nuevo asignado a una clave, hay que sobreescribirla (volver a escribir lo mismo para agregar pero con el nuevo valor). Nunca puede haber dos claves iguales, lo que hace es sobreescribir 
+
+ Para eliminar un elemento, usamos del :  del nombre_diccionario[clave_eliminar]
+
+ Para asignar una tupla a un diccionario:  Teniendo ya una tupla creada nombre_tupla -> nombre_diccionario={nombre_tupla[0]:valor1,nombre_tupla[1]:valor2,...}
+
+ Para que un diccionario almacene una tupla:  nombre_diccionario={clave1:(valor1.1,valor1.2,valor1.3),clave2:(valor2.2,valor2.2,valor2.3),...}            
+
+ Para acceder a la tupla almacenada en un diccionario:  print(nombre_diccionario[clave])    -> Te imprime la tupla entera
+
+ Para que un diccionario almacene otro diccionario:  nombre_diccionario={clave1:valor1,clave2:{clave2.1:valor2.1,clave2.2:valor2.2,...},...}
+
+ Para acceder a un diccionario almacenado en un diccionario:  print(nombre_diccionario[clave])    -> Te imprime el diccionario interno entero
+
+ Para saber las claves que tiene un diccionario, usamos keys() :  print(nombre_diccionario.keys())    -> Te imprime todas las claves del diccionario
+
+ Para saber los valores que tiene un diccionario, usamos values() :  print(nombre_diccionario.values())    -> Te imprime todos los valores del diccionario
+
+ Para saber la longitud que tiene un diccionario, usamos len() :  print(len(nombre_diccionario))    -> Te imprime la longitud, es decir, el numero de elementos que tiene
+
+ 
+
+FUNCION input() :
+
+ variable1=input()   -> Almacena lo que has introducido por teclado en la variable1 como texto
+
+ Para introducir un valor por teclado. Python siempre considera por defecto que introduces un texto, aunque escribas un numero.
+
+
+
+FUNCION int() :
+
+ int(variable1)   -> Lo transforma a un entero 
+
+ Transforma en entero cualquier cosa que introduzcas
+
+
+
+FUNCION float() :
+
+ float(variable1)   -> Lo transforma a un decimal 
+
+ Transforma en numero decimal cualquier cosa que introduzcas
+
+
+
+FUNCION str() :
+
+ str(variable1)   -> Lo transforma a texto
+
+ Transforma en texto cualquier cosa que introduzcas
+
+
+
+FUNCION lower() :
+
+ variable2=variable1.lower()
+
+ Para pasar la variable1 a minuscula y se almacena en la variable2
+
+
+
+FUNCION upper() :
+
+ variable2=variable1.upper()
+
+ Para pasar la variable1 a mayuscula y se almacena en la variable2
+
+
+
+CONDICIONAL if :
+
+ if condicion1:          
+ 	instruccion1
+ 	instruccion2
+
+ Si se cumple la condicion, entra en las instrucciones y las ejecuta
+
+
+  
+CONDICIONAL if-else :
+
+ if condicion1:
+ 	instruccion1
+ else:
+ 	instruccion2  
+
+ Si se cumple la condicion, ejecuta la instruccion1, si no se cumple, la instruccion2
+
+
+
+CONDICIONAL elif (else-if) :
+
+ if condicion1:
+ 	instruccion1
+ elif condicion2:
+ 	instruccion2
+ else:
+ 	instruccion3  
+
+ Si se cumple la condicion, ejecuta la instruccion1, si no se cumple, evalua la condicion2 y si la cumple ejecuta instruccion2, si no se cumple, ejecuta la isntruccion3
+
+
+
+BUCLE for :
+
+ for variable in elementoarecorrer:      -> El elementoarecorrer puede ser una lista, una tupla, una cadena de texto, etc (recorre el bucle tantas veces como elementos (o diemension) tiene este elementoarecorrer)
+ 	Cuerpo del bucle                 -> Lo que se va a repetir
+
+ Es un bucle determinado, sabemos cuantas veces va a repetir el codigo en su interior.
+ La variable del bucle suele ser la i 
+
+ Para hacer un contador:  contador=0
+                          for i in elementoarecorrer:
+                          	contador=contador+1     -> Tambien se puede poner contador+=1 y es lo mismo
+ 
+ El tipo range() permite usar un bucle for con contador:  for i in range(n):     -> Crea una array desde el 0 hasta n. Ejecuta el bucle n veces (es decir si el numero es 5, desde el 0 hasta el 4, que son 5 veces)
+                                                                                 -> Si pones range(n1,n2), el bucle cuenta desde n1 hasta n2-1
+                                                                                 -> Si pones range(n1,n2,n3), el bucle cuenta desde n1 hasta n2-1 pero de n3 en n3 (en vez de ir contando de 1 en 1)
+
+
+
+BUCLE while :
+
+ while condicion:               -> La condicion se construye igual que una condicion que usarias en un if
+ 	Cuerpo del bucle    
+
+
+
+ Es un bucle indeterminado, no sabemos a priori cuantas veces va a repetir el codigo en su interior.
+ Mientras que la condicion se cumpla, el bucle estara ejecutando el cuerpo constantemente. Cuando la condicion no se cumpla, se sale de él.
+ La instruccion break; (dentro del cuerpo del bucle) hace que salgas del bucle en cuanto el fluje la lea y continua leyendo el resto del programa                                          
+
+
+ 
+INSTRUCCIONES PARA BUCLES FOR Y WHILE:
+
+ - Continue: lo que hace es saltar a la siguiente interaccion de bucle, es decir, cuando en una vuelta de bucle lee esta instruccion, salta a la siguiente vuelta sin tener que haber acabado de leer lo que le quedaba de la anterior vuelta
+
+ - Pass: el bucle devuelve NULL en cuanto lee esta instruccion, es como si no ejecutara el bucle (se usa muy poco)
+
+ - Else: funciona de manera similar a como lo hace en un condicional pero formando parte del bucle
+
+
+
+GENERADORES:
+
+ def nombre_generador():               -> Lo del parentesis se llama zona de parametros, puede ir vacio o lleno. Si hay mas de uno ha de ir separado por una coma (,)
+ 	instruccion1             
+ 	instruccion2
+ 	...
+ 	yield variable_a_devolver       -> Opcional
+
+ Son estructuras que extraen valores de una funcion y se almacenan en objetos iterables, es decir, son objetos que se van a poder recorrer con un bucle (o con iteradores o el metodo next)
+ Los valores se almacenan de uno en uno dentro del generadory cada vez que se almacene un valor, el generador estara en un estado pausado (esto se llama suspension de estado)
+ Es muy parecido a una funcion pero la diferencia esta en que cuando llamas a la funcion (en este caso al generador), en vez de devolverte lo que da la funcion entera, el generador te devuelve solo el primer valor, y si quieres el segundo lo tienes que volver a llamar y asi todas las veces
+ Los generadores son mas eficientes que las funciones y es util si quieres que te devuelva los valores de 1 en 1
+ 
+ Para llamar a un generador:  nombre_generador()
+ 
+ El metodo next() es para que te devuelva solo un valor del generador:  next(nombre_generador)
+ 
+ Se puede usar tambien yield from que es para simplificar el codigo en caso de bucles anidados
+
+
+
+EXCEPCIONES
+ 
+ Es un error que ocurre cuando aunque este todo bien escrito, aparece un error inesperado
+ El programa no se ejecuta desde ese error inesperado
+ Para resolver este problema, hay que hacer una captura o control de excepcion, es decir, que si alguna instruccion no se puede hacer (por ejemplo dividir entre 0) que el resto del programa al menos se ejecute
+
+ Esto se hace metiendo la instruccion que puede dar error en un bloque try except :  try:
+                                                                                     	instruccion_puede_dar_error
+                                                                                     
+                                                                                     except nombre_del_error:
+                                                                                     	instruccion_alternativa
+ 
+ Va a intentar la instruccion de dentro del try y si no lo consigue, ejecutara lo que hay dentro del except (es muy parecido a un if-else)
+ Si el error del except no es realmente el error que se comete, no valdra para nada este bloque y caera el programa
+ Se puede usar varias clausulas except consecutivas para pillar errores dentro de un mismo bloque, es decir, que si en la instruccion o instrucciones que pueden dar error hay mas de un error distinto, se pueden solventar con varios except seguidos
+ Si en el except no pones el tipo de error, va a capturar una excepcion o error general pero no es recomendable porque no indica que tipo de error es, aunque es verdad que cumple su cometido y el programa no cae (que es lo que queremos)
+ 
+ Si quieres que una instruccion se ejecute siempre (tanto si se captura una excepcion o si no), se usa la palabra reservada finally al mismo nivel que el try y el except :  try:
+                                                                                                                                   	                                     	instruccion_puede_dar_error
+                                                                                     
+                                                                                                                                                                             except nombre_del_error:
+                                                                                     	                                                                                     	instruccion_alternativa          -> O simplemente print indicando el error
+                                                                                                                                                                             
+                                                                                                                                                                             finally:
+                                                                                                                                                                             	instruccion_a_ejecutar_siempre   -> Se ejecuta si o si, entre en el try o en el except
+ 
+ La instruccion raise sirve para lanzar una excepcion, la que tu quieras, para hacer que si algo no quieres que sea asi salte el error:  raise nombre_del_error("Mensaje de error que quieras")
+ 
+
+
+POO (PROGRAMACION ORIENTADA A OBJETOS):
+
+ Los objetos tienen un estado, unas propiedades y un comportamiento (que puede hacer ese objeto)
+ Las ventajas que tiene es que se pueden dividir los programas en trozos/partes (modularizacion), muy reutilizable (concepto de herencia), utilizacion de excepciones y encapsulamiento (
+ Clase: modelo donde se redactan las caracteristicas comunes de un grupo de objetos (por ejemplo en un coche, seria el chasis y las 4 ruedas)
+ Ejemplar/Instancia/Objeto de clase: objeto/ejemplar perteneciente a una clase (por ejemplo en un coche, seria un coche citroen y un peugeot, ambos tienen 4 ruedas y el mismo chasis, aunque luego cada uno tenga tambien sus propias caracteristicas que le hacen unico)
+ Modularizacion: permite reutilizar trozos de codigo de un programa en otro
+ Encapsulamiento: quiere decir que aisla a una clase y que las demas clases no entienden el funcionamiento de ella (para que el funcionamiento interno no sea accesible desde fuera) pero a su vez todas estan conectadas (mediante metodos de acceso) para trabajar como equipo (un ejemplo puede ser endesa, todos los departamentos son independientes y no tienes porque entender uno u otro para que todos trabajen a la vez y hagan funcionar a la empresa)
+ 
+ Para crear/declarar una clase:  class Nombre_clase():               -> La primera letra del nombre de la clase SIEMPRE en mayuscula
+                        	 	propiedad1                   -> Son variables que pertenecen a la clase en la que estan
+                                 	propiedad2 
+                                 	propiedad3 
+                                 	.......
+                                        
+                                 	def nombre_metodo(self):     -> Creamos un metodo eligiendo la defs (un metodo es una funcion especial que pertenece a la clase (es de la clase), en cambio una funcion normal no es de ninguna clase). El parametro self hace referencia al propio objeto perteneciente a la clase (tambien se pueden añadir mas parametros y se les llama como hacemos en las funciones). El nombre del metodo se puede cambiar al que tu quieras pero por defecto se llama function
+                                        	self.propiedad1      -> Palabra reservada pass para que si no queremos que haga nada no de fallo pero ahi va lo que quieres que haga el metodo. Empieza por self.propiedad1
+                                                .....
+
+                                        	return               -> Opcional
+
+    
+ Para crear un objeto de clase:  nombre_objeto=Nombre_clase()    -> El Nombre_clase es el nombre de la clase a la que pertenece ese objeto creado (esto tambien se llama instanciar una clase). Dentro del parentesis habra algo si el metodo __init__ (constructor) tiene parametros que recibir                       
+
+ Nomenclatura del punto, sirve para acceder a las propiedades de la clase:  nombre_objeto.propiedad1
+ 
+ Nomenclatura del punto, sirve tambien para llamar al metodo/comportamiento de la clase:  nombre_objeto.nombre_metodo()    -> El parametro que recibe es el propio objeto (nombre_objeto), que viaja y se almacena en self. Dentro del parentesis habra algo si el metodo tiene parametros que recibir                       
+ 
+ Constructor: es un metodo especial que le da estado inicial a los objetos para que se vea de forma clara cual es ese estado incial de los objetos
+
+ Para crear/declarar un metodo constructor:     def __init__(self):          -> Creamos el constructor elegiendo la defs. El nombre del constructor es siempre init 
+                                               		self.propiedad1
+                                                	self.propiedad2
+                                                	......
+
+ Para encapsular una variable o propiedad:   self.__propiedad1      -> La propiedad o variable encapsulada no se podra modificar desde fuera de la clase pero si desde la propia clase
+ 
+ Para encapsular un metodo:   def__nombre_metodo(self):      -> El metodo encapsulado no se podra modificar desde fuera de la clase (y si le llamas dara error) pero si desde la propia clase u otra
+
+ Herencia: consiste en coger todas las propiedades y metodos en comun de unos objetos y englobarlos en una superclase y despues las particularidades de cada uno de los objetos las construiremos en su propia clase. La clase mas arriba se llama clase padre o superclase, la siguiente seria subclase de la de arriba pero a su vez es superclase de las de debajo. La principal utilidad de esto es la reutilizacion de codigo en caso de crear objetos similares
+ 
+ Para crear una clase que herede de otra:   class Nombre_Subclase(Nombre_Superclase):     -> Pones el nombre que quieras a la subclase y entre los parentesis, el nombre de la superclase (de la cual va a heredar). Quien dice superclase dice la clase superior jerarquicamente a esta
+
+ Se puede sobreescribir un metodo en una subclase poniendo el mismo nombre que el que tiene ese mismo metodo en la superclase y con el mismo numero de parametros
+ Si con un objeto llamas a un metodo que esta en dos clases diferentes (una subclase y una superclase por ejemplo), es decir, un metodo que esta sobreescrito y tiene el mismo nombre en dos clases diferentes, estamos llamando al metodo de la subclase
+ 
+ La herencia multiple es que una subclase herede de dos clases a la vez:   class Nombre_Subclase(Nombre_Superclase1,Nombre_Superclase2):     -> Se le de preferencia a la primera superclase que indiques (Nombre_Superclase1), es decir, al meter los parametros los "relacionara" con el metodo (constructor) de la primera clase
+
+ Para "arreglar" lo de la preferencia en herencia multiple, usamos la funcion super() :   super().nombre_metodo(parametros_a_llamar_superclase1)     -> Lo que hace super() es llamar al metodo (constructor) de la superclase1, que ejecuta ese metodo y despues ejecuta el otro metodo (constructor) de la superclase2
+
+ Principio de sustitucion: "es siempre un/a", un objeto de la subclase es siempre un objeto de la superclase pero no al reves
+ 
+ Para comprobar que un objeto es objeto de una clase determinada usamos isinstance() :   isinstance(nombre_objeto, Nombre_clase)     -> Devuelve True si pertenece a la clase preguntada o False si no pertenece 
+
+ Polimorfismo: un objeto puede cambiar de forma (de comportamiento) segun el contexto en el que se utilice. Se hace creando una funcion que reciba por parametro en su llamada un objeto de una clase a la cual llamará y que al cambiar la clase de ese objeto, esta funcion llamará a otra clase distinta
+
+ 
+
+METODOS DE CADENAS:
+
+ Se usan igual que los metodos (nomenclatura del punto):  nombre_variable.metodo_cadena() 
+
+ - .upper() : convierte en mayusculas todas las letras de un string
+
+ - .lower() : convierte en minusculas todas las letras de un string
+
+ - .capitalize() : pone la primera letra en mayuscula de un string
+
+ - .count() : cuenta cuantas veces aparece una letra o una cadena de caracteres dentro de un texto. Hay que introducir dentro de los parentesis la letra a contar entre comillas
+ 
+ - .find() : representa el indice (la posicion) en la que aparece un caracter o un grupo de caracteres dentro de un texto. Hay que introducir dentro de los parentesis la letra a saber su indice entre comillas (devuelve -1 si no la encuentra)
+
+ - .isdigit() : devuelve un booleano (True o False). Indica si el valor introducido es un numero o no
+
+ - .isalnum() : devuelve un booleano (True o False). Indica si el valor introducido es un alfanumerico (combinacion de letras y numeros) o no
+
+ - .isalpha() : devuelve un booleano (True o False). Indica si hay solo letras o no, los espacios no cuentan
+
+ - .split() : separa por palabras utilizando espacios
+ 
+ - .strip() : borra los espacios sobrantes al principio y al final
+
+ - .replace() : cambia una palabra o una letra por otra dentro de un string. Hay que introducir dentro de los parentesis la letra vieja y la nueva a cambiar separadas por coma y entre comillas
+
+ - .rfind() : igual que find pero en vez de decirte la posicion del primero que encuentra, te dice la del ultimo. Hay que introducir dentro de los parentesis la letra a saber su indice entre comillas (devuelve -1 si no la encuentra)
+
+
+
+MODULOS:
+
+ Es un archivo con extension .py, .pyc (python compilado). Los modulos tienen su propio espacio de nombres y pueden contener variables, funciones, clases y otros modulos.
+ Sirven para reutilizar codigo (POO) y organizarlo (modularizacion: dividir el codigo en modulos)
+ Para crearlo, se crea un archivo .py y se guarda donde nos interese. 
+ 
+ Para usarlo lo que hay que hacer es importarlo:   import nombre_modulo    -> No es necesario poner la extension
+ 
+ Se usa con la nomenclatura del punto para llamar a la funcion del modulo:   nombre_modulo.funcion_del_modulo()
+ 
+ Te puedes ahorrar escribir cada vez el nombre_modulo cambiando la directiva import:   from nombre_modulo import funcion_del_modulo    -> Llamas a la funcion como al cualquier otra funcion (sin tener que poner el punto). Si quieres incluir todo el contenido del modulo, se pone un asterisco (*) donde la funcion del modulo. Si quieres llamar a varias se separan con comas (,)
+ 
+ El modulo debe estar en el mismo directorio (carpeta) donde se encuentra el archivo que lo esta llamando, para solucionarlo usamos los paquetes
+ En resumen, crear modulos sirve para poner codigo en otro sitio y luego en otro archivo acceder a esa informacion y hacer referencia a ella ahorrando espacio (como llamar a otras hojas en Excel)
+ 
+
+
+PAQUETES:
+
+ Son directorios (carpetas) donde se almacenan modulos relacionados entre si
+ Sirven para reutilizar codigo y organizarlo
+ Para crearlo, se crea una carpeta en la cual debe haber un archivo con extension __init__.py (el cual estara vacio)
+
+ Para usarlo lo que hay que hacer es importarlo:   from nombre_paquete.nombre_modulo import funcion_del_modulo     -> Llamas a la funcion como al cualquier otra funcion (sin tener que poner el punto). Si quieres incluir todo el contenido del modulo, se pone un asterisco (*) donde la funcion del modulo. Si quieres llamar a varias se separan con comas (,)
+
+ Para crear un subpaquete se hace igual que un paquete, es decir, introduciendo un archivo con extension __init__.py (el cual estara vacio)
+
+ Para usarlo se hace igual que un paquete pero vas concatenando la ruta del paquete, es decir:  from nombre_paquete.nombre_subpaquete.nombre_modulo import funcion_del_modulo     -> Llamas a la funcion como al cualquier otra funcion (sin tener que poner el punto). Si quieres incluir todo el contenido del modulo, se pone un asterisco (*) donde la funcion del modulo. Si quieres llamar a varias se separan con comas (,)                     
+
+
+
+PAQUETES DISTRIBUIBLES:
+
+ Son paquetes que se pueden enviar. Hay que crearlos, distribuirlos e instalarlos donde lo quieras usar
+ Lo que se hace es instalar el paquete en cuestion dentro del propio python del sistema operativo para que pueda acceder a él desde cualquier sitio
+ Hay que crear un archivo con extension setup.py que describe la configuracion del paquete distribuible
+
+ Para usarlo hay que importarlo:  from setuptools import setup
+
+ Usamos la funcion setup() y dentro de los parentesis estara la informacion usando atributos (name=" " , version=" " , description=" " , author=" " , packages=["nombre_paquete","nombre_paquete.nombresubpaquete"])
+
+ Donde esta el archivo de setup: SHIFT + Click derecho -> Abrir la ventana de PowerShell aqui -> Escribes: python setup.py sdist -> Enter
+
+ Se crean dos carpetas, la egg-info y la dist (la importante) en la cual se crea un archivo comprimido que es lo que hay que distribuir
+
+ Para instalar ese archivo comprimido: haces los pasos de la PowerShell desde la carpeta que quieras -> Escribes: pip3 install nombre_archivo_comprimido -> Enter
+
+ Para desistalarlo: haces los pasos de la PowerShell desde la carpeta que quieras -> Escribes: pip3 uninstall nombre_paquete -> Enter
+
+
+
+ARCHIVOS EXTERNOS:
+
+ Para la persistencia de datos, es decir, almacenar los datos para que no se pierdan. Estos datos se pueden guardar en archivos externos o en BBDD (bases de datos)
+ Las fases para el manejo de archivos externos son: Crear el archivo externo -> Abrir el archivo externo -> Manipular el archivo externo para introducir o leer la informacion -> Cerrar el archivo externo
+ 
+ Para abrir un archivo externo:  from io import open
+
+ Para crear un archivo externo usamos la funcion .open() :   nombre_archivo=open("nombre_archivo.txt", "modo_a_abrir")      -> Los modos son lectura ("r"), escritura ("w") y append ("a") que es añadir a lo ya escrito  
+
+ Para introducir algo en un archivo externo creado usamos la funcion .write() :  nombre_archivo.write()     -> Dentro del parentesis ira lo que quieres escribir
+
+ Para cerrar (desde nuestro programa python) un archivo externo usamos la funcion .close() :  nombre_archivo.close()
+
+ Para leer un archivo externo usamos la funcion .read() :  variable_lectura=nombre_archivo.read()   -> Si luego imprimes (con print) la variable_lectura, te imprime la informacion que hay almacenada en el archivo externo de texto (o puedes imprimir directamente nombre_archivo.read())
+
+ Para leer en modo lista un archivo externo usamos la funcion .readlines() :  variable_lectura=nombre_archivo.readline()     -> Si luego imprimes (con print) la variable_lectura, te imprime la informacion que hay almacenada en el archivo externo de texto en forma de lista. Guarda la informacion de cada linea de texto como un elemento de lista 
+
+ Para agregar una linea de texto a un archivo que ya tiene algo escrito usamos el "modo_a_abrir" append y despues la funcion .write() (igual que con el modo escritura)
+
+ Cada vez que haces todas las fases, hay que ejecutar la consola (Ctrl + Alt + B) para que se realicen los cambios
+ Cuando abrimos un archivo, el puntero (cursor) esta en la primera posicion por defecto, y cuando terminamos de leerlo, la posicion es la ultima
+
+ Para modificar la posicion de un puntero, usamos la funcion .seek() :  nombre_archivo.seek()    -> Dentro de los parentesis ira el numero de caracter donde quieres que se posicione el puntero (cursor). Si luego usas la funcion .read() , leera el texto pero desde esa posicion en adelante
+
+ Para hacerlo al reves, es decir, que lea desde el principio (o desde donde este el puntero en ese momento) hasta una posicion en concreto, usamos la funcion .read() pero dentro de los parentesis ira el numero de caracter hasta donde va a leer 
+
+ Se puede usar el modo lectura y escritura a la vez si donde el "modo_a_abrir" pones un + ("r+") pero es importante saber donde se encuentra el puntero para no escribir encima de lo ya escrito
+
+
+
+SERIALIZACION:
+
+ Es guardar en un fichero externo un objeto o un diccionario en codigo binario con el objetivo de distribuirlo por internet, para guardarlo en un disco duro o para guardarlo en una base de datos
+
+ Debemos importar la biblioteca pickle:  import pickle
+
+ Hay que crear un archivo externo pero el cual tiene que tener acceso de escritura binaria, que se hace igual que un archivo externo normal pero en el "modo_a_abrir" usamos "wb"
+
+ Usamos la funcion .dump() para hacer un volcado al arhivo externo en binario:  pickle.dump(objeto_volcar, nombre_archivo)     -> El objeto_volcar es la informacion que quieres volcar a ese archivo y el nombre_archivo es el nombre que le das en python no el del disco duro (yo los llamo a ambos igual para evitar lios)
+
+ Se puede borrar si quieres ese archivo (el que esta en python) porque el binario ya esta en la carpeta:   del (nombre_archivo)
+
+ Teniendo una archivo en binario, para leerlo se hace igual que un archivo externo normal pero en el "modo_a_abrir" usamos "rb"
+
+ Usamos la funcion .load() para guardar la informacion del archivo externo en binario en una variable:  variable=pickle.load(nombre_archivo)     -> nombre_archivo es el nombre que le das en python
+
+ Para poder verlo, usas un print de la variable
+ Si quieres serializar objetos en vez de una coleccion (lista) lo que debes hacer es pasar esos objetos dentro de una lista, hacer lo mismo que si fuera una lista, y por ultimo al mostrarlos usar un bucle for que recorra la lista para imprimirte los objetos 
+
+
+
+INTERFACES GRAFICAS (GUI):
+
+ Son ventanas con las que los usuarios interactuamos con los programas. Intermediario entre nosotros y el programa que se esta ejecutando
+ Trabajamos con la libreria Tkinter, que es un puente entre python y una libreria estandar (TCL/TK):   from tkinter import *
+ Primero construimos la raiz (la ventana),  dentro de ella el frame (organizador de elementos) que tiene en su interior widgets (botones, desplegables)
+ 
+
+ Para crear una raiz:  variable=Tk()           -> La variable se suele llamar raiz y es para instanciar a la clase Tk (como crear un objeto de clase Tk). Todo lo del metodo config CREO que se puede meter en los parentesis separados por coma (,)
+                       
+                       variable.mainloop()     -> Llamamos al metodo mainloop de la clase Tk. Este metodo es como si fuera un bucle infinito. Debe estar SIEMPRE al final del codigo
+
+
+ Para poner un titulo a la ventana usamos el metodo title:  variable.title()   -> Dentro de los parentesis introduces el titulo que quieras en comillas
+ 
+ Para impedir que se pueda redimensionar una ventana usamos el metodo resizable:  variable.resizable()   -> Dentro de los parentesis introduces dos parametros (ancho, alto) de tipo booleano (puedes usar 1 o True y 0 o False). Si pones 0 y 0 no puedes redimensionarlo en ninguna direccion
+ 
+ Para poner una imagen en la barra del titulo, tienes que transformar un imagen a .ico (pagina de conversor en google) y ponerla en la misma carpeta donde esta el archivo .py, y despues usar el metodo iconbitmap:   variable.iconbitmap()      -> Dentro de los parentesis introduces la ruta (si esta en la misma carpeta pues solo el nombre de la imagen.ico) en comillas
+
+ Para cambiar el tamaño a la ventana que le da por defecto usamos el metodo geometry:  variable.geometry()     -> Dentro de los parentesis introduces dos parametros (ancho x alto) entre comillas
+
+ Para cambiar el color de fondo usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces bg="colorquequieres". Bg significa background
+
+ Si al .py le cambias la extension a .pyw, si haces doble click directamente en el archivo se abrira solo la aplicacion grafica (ya no abrira la consola detras)
+
+ Para salir del programa usamos el metodo destroy:  variable.destroy() 
+
+
+ Para crear un frame:  variable=Frame(contenedor)       -> La variable la llamas como quieras y es para instanciar a la clase Frame (como crear un objeto de clase Frame). El contenedor es donde va a estar el frame (puede ser en un frame, en la raiz, dentro de otro). Todo lo del metodo config CREO que se puede meter en los parentesis separados por coma (,)
+
+
+ Para empaquetar el frame (meterlo dentro de la raiz) usamos el metodo pack:  variable.pack()    -> Si dentro de los parentesis pones side="ladoquequieras" siendo: right, left, top o bottom, el frame se queda anclado al lado que pongas. Si quieres ponerlo en dos sitios a la vez (right y top por ejemplo), pones anchor="puntocardinalquequieras" siendo: n (norte/arriba), s (sur/abajo), e (este/derecha) y w (oeste/izquierda), separado de side por coma
+                                                                                                 -> Si dentro de los parentesis pones fill="ejeaexpandir" siendo: x, y, both o none, y expand="True", el frame se expande a traves del eje que pongas o ambos (con both)
+
+ Para cambiar el color de fondo usamos el metodo config igual que para la raiz
+
+ Para darle tamaño al frame usamos el metodo config:  variable.config()      -> Dentro de los parentesis introduces width="anchoquequieras" y height="altoquequieras" separados por coma (,). Para esto has de quitar el metodo de geometry llamado en la raiz porque ella misma se adapta a estas dimensiones del frame
+
+ Para cambiar el grosor del borde (tambien se puede a la raiz) usamos el metodo config:  variable.config()      -> Dentro de los parentesis entroduces bd=grosorbordequequieras
+ 
+ Para cambiar las caracteristicas del borde (tambien se puede a la raiz) usamos el metodo config:  variable.config()      -> Dentro de los parentesis introduces relief="tipodeborde" siendo: groove, sunken y mas
+
+ Para cambiar el cursor cuando pasa por el frame (tambien se puede a la raiz) usamos el metodo config:  variable.config()   -> Dentro de los parentesis introduces cursor="tipodecorsor" siendo: hand2 (mano), pirate (calavera) y mas
+
+
+ Para crear un widget label:  variable=Label(contenedor)       -> La variable la llamas como quieras y es para instanciar a la clase Label (como crear un objeto de clase Label). Permiten ubicar textos e imagenes que no se pueden borrar ni interactuar con él (son estaticos). El contenedor es donde va a estar el label (puede ser en un frame, en la raiz, dentro de otro). Todo lo del metodo config CREO que se puede meter en los parentesis separados por coma (,)
+
+
+ Para empaquetar el label (meterlo dentro del frame o de la raiz o de donde indiquemos en el contenedor) usamos el metodo pack:  variable.pack()
+ 
+ Para poner una imagen, se hace despues del empaquetado creando un "nuevo" label:  variableimagen=PhotoImage()     -> La variable la llamas como quieras y es para instanciar a la clase PhotoImage (como crar un objeto de la clase PhotoImage). Solo tipo png y gif (con la libreria Tkinter) y debes tener la imagen en la misma carpeta donde esta el archivo .py. Dentro de los parentesis introduces file="laruta" (si esta en la misma carpeta pues solo el nombre de la imagen.png o gif)  
+ 
+ Para que salga la imagen usamos el metodo config:  variableimagen.config()     -> Dentro de los parentesis introduces image=variableimagen
+
+ Para poner un texto en el label usamos el metodo config:  variable.config()    -> Dentro de los parentesis introduces text="textoquequieras"
+
+ Para ubicar el label en cualquier parte dentro de nuestra interfaz grafica usamos el metodo place:  variable.place()    -> Dentro de los parentesis introducimos las coordenadas x=coordenadax e y=coordenaday separados por coma (,) para ubicarlo. La coordenada x es la distancia desde el lateral izquierdo hasta el texto  y la coordenada y es la distancia desde el lateral superior hasta el texto (ambas en pixeles)
+
+ Para ubicar de manera chula el label en cualquier parte de nuestra interfaz grafica usamos el metodo grid en vez del place:  variable.grid()      -> Dentro de los parentesis introduces row=filadondecolocarlo y column=columnadondecolocarlo. Cuenta como una matriz (desde arriba a la izquierda) pero desde el 0,0. Si le introduces sticky="colocacion" siendo: n (norte/arriba), s (sur/abajo), e (este/derecha), w (oeste/izquierda) o tambien combinando ne, nw, se y sw, aparecen alienados como lo hayas elegido. Si le introduces pady=distanciay  o padx=distanciax , es la distancia (en pixeles) de un elemento en vertical (pady) u horizontal (padx) al limite del contenedor
+
+ Para poner el texto con color usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces fg="colorquequieras". fg significa frontground
+
+ Para cambiar el tipo de texto usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces font=("tipodeletra",tamañoletra)
+ 
+ 
+ Para crear un widget entry:  variable=Entry(contenedor)     -> La variable la llamas como quieras y es para instanciar a la clase Entry (como crear un objeto de clase Entry). Es un cuadro de texto de toda la vida en el cual pulsas sobre él y escribes un texto. El contenedor es donde va a estar el entry (puede ser en un frame, en la raiz, dentro de otro). Se usan con StringVar(). Todo lo del metodo config CREO que se puede meter en los parentesis separados por coma (,)
+
+
+ Con el StringVar se establece una variable "global" (variable_global=StringVar()) la cual se introduce luego como textvariable=variable_global dentro de los parentesis del Entry (o tambien con el metodo config)
+
+ Para empaquetar el entry (meterlo dentro del frame o de la raiz o de donde indiquemos en el contenedor) usamos el metodo pack:  variable.pack()
+ 
+ Para ubicar el entry en cualquier parte dentro de nuestra interfaz grafica usamos el metodo place:  variable.place()    -> Dentro de los parentesis introducimos las coordenadas x=coordenadax e y=coordenaday separados por coma (,) para ubicarlo. La coordenada x es la distancia desde el lateral izquierdo hasta el texto  y la coordenada y es la distancia desde el lateral superior hasta el texto (ambas en pixeles)
+
+ Para ubicar de manera chula el entry en cualquier parte de nuestra interfaz grafica usamos el metodo grid en vez del place:  variable.grid()      -> Dentro de los parentesis introduces row=filadondecolocarlo y column=columnadondecolocarlo. Cuenta como una matriz (desde arriba a la izquierda) pero desde el 0,0. Si le introduces sticky="colocacion" siendo: n (norte/arriba), s (sur/abajo), e (este/derecha), w (oeste/izquierda) o tambien combinando ne, nw, se y sw, aparecen alienados como lo hayas elegido. Si le introduces pady=distanciay  o padx=distanciax , es la distancia (en pixeles) de un elemento en vertical (pady) u horizontal (padx) al limite del contenedor
+
+ Para poner el texto con color usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces fg="colorquequieras". fg significa frontground
+
+ Para cambiar el tipo de texto usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces font=("tipodeletra",tamañoletra)
+ 
+ Para que salgan asteriscos cuando escribes (tipo password) usamos el metodo config:  variable=config()     -> Dentro de los parentesis introduces show="*" donde los asteriscos es lo que va a mostrar en vez de lo que escribas (pueden ser asteriscos o cualquier caracter si quieres)
+
+ Para que lo que escribes esta centrado usamos el metodo config:  variable.config()      -> Dentro de los parentesis introduces justify="posicion" siendo: right (a la derecha), left (a la izquierda) o center (en el centro)
+
+ Para escribir en el texto usamos set:  variable_global.set() 
+
+ Para rescatar el texto del entry usamos get:  variable_global.get()
+ 
+
+
+ Para crear un widget text:  variable=Text(contenedor)       -> La variable la llamas como quieras y es para instanciar a la clase Text (como crear un objeto de clase Text). Es un cuadro de texto pero largo que sirve para introducir un texto largo y escribes en él. El contenedor es donde va a estar el text (puede ser en un frame, en la raiz, dentro de otro). Todo lo del metodo config CREO que se puede meter en los parentesis separados por coma (,)
+
+ 
+ Para empaquetar el text (meterlo dentro del frame o de la raiz o de donde indiquemos en el contenedor) usamos el metodo pack:  variable.pack()
+ 
+ Para ubicar el text en cualquier parte dentro de nuestra interfaz grafica usamos el metodo place:  variable.place()    -> Dentro de los parentesis introducimos las coordenadas x=coordenadax e y=coordenaday separados por coma (,) para ubicarlo. La coordenada x es la distancia desde el lateral izquierdo hasta el texto  y la coordenada y es la distancia desde el lateral superior hasta el texto (ambas en pixeles)
+
+ Para ubicar de manera chula el text en cualquier parte de nuestra interfaz grafica usamos el metodo grid en vez del place:  variable.grid()      -> Dentro de los parentesis introduces row=filadondecolocarlo y column=columnadondecolocarlo. Cuenta como una matriz (desde arriba a la izquierda) pero desde el 0,0. Si le introduces sticky="colocacion" siendo: n (norte/arriba), s (sur/abajo), e (este/derecha), w (oeste/izquierda) o tambien combinando ne, nw, se y sw, aparecen alienados como lo hayas elegido. Si le introduces pady=distanciay  o padx=distanciax , es la distancia (en pixeles) de un elemento en vertical (pady) u horizontal (padx) al limite del contenedor
+
+ Para que un widget ocupe mas de una columna usamos el metodo grid:  variable.grid()     -> Dentro de los parentesisi introduces columnspan=cantidadcolumnasaocupar
+
+ Para poner el texto con color usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces fg="colorquequieras". fg significa frontground
+
+ Para cambiar el tipo de texto usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces font=("tipodeletra",tamañoletra)
+ 
+ Para darle tamaño al text usamos el metodo config:  variable.config()      -> Dentro de los parentesis introduces width="anchoquequieras" y height="altoquequieras" separados por coma (,)
+
+ Para poner un scroll bar al text, se crea crea un "nuevo" objeto (scroll):  variablescroll=Scrollbar(contenedor, orientacion)         -> La variable la llamas como quieras y es para instanciar a la clase Scrollbar (como crear un objeto de la clase Scrollbar). Dentro de los parentesis introduces el contenedor que obviamente tiene que ser el mismo que pongas cuando creas el objeto text, y la orientacion introduciendo command=variable.yview o xview siendo: variable el nombre de la variable texto e yview y xview la posicion  
+ 
+ Para que salga el scroll, usamos el metodo grid pero ahora con la variablescroll ubicandolo en la columna (si es yview) o la fila (xview) de al lado. Si en el grid introduces sticky="nsew", el scrollbar se adapta al tamaño del text
+
+ Para que el scrollbar te indique la altura a la que estas en el texto, usamos el metodo config:  variable.config()    -> Dentro de los parentesis introduces yscrollcommand=variablescroll.set siendo: variablescroll el nombre de la variabel (objeto) scroll
+
+ 
+
+ Para crear un widget button:  variable=Button(contenedor)     ->  La variable la llamas como quieras y es para instanciar a la clase Button (como crear un objeto de clase Button). Sirve para crear botones para interactuar. El contenedor es donde va a estar el Button (puede ser en un frame, en la raiz, dentro de otro). Todo lo del metodo config CREO que se puede meter en los parentesis separados por coma (,)
+
+ 
+ Para empaquetar el boton (meterlo dentro del frame o de la raiz o de donde indiquemos en el contenedor) usamos el metodo pack:  variable.pack()
+ 
+ Para poner un texto en el boton usamos el metodo config:  variable.config()    -> Dentro de los parentesis introduces text="textoquequieras"
+
+ Para ubicar el boton en cualquier parte dentro de nuestra interfaz grafica usamos el metodo place:  variable.place()    -> Dentro de los parentesis introducimos las coordenadas x=coordenadax e y=coordenaday separados por coma (,) para ubicarlo. La coordenada x es la distancia desde el lateral izquierdo hasta el texto  y la coordenada y es la distancia desde el lateral superior hasta el texto (ambas en pixeles)
+
+ Para ubicar de manera chula el text en cualquier parte de nuestra interfaz grafica usamos el metodo grid en vez del place:  variable.grid()      -> Dentro de los parentesis introduces row=filadondecolocarlo y column=columnadondecolocarlo. Cuenta como una matriz (desde arriba a la izquierda) pero desde el 0,0. Si le introduces sticky="colocacion" siendo: n (norte/arriba), s (sur/abajo), e (este/derecha), w (oeste/izquierda) o tambien combinando ne, nw, se y sw, aparecen alienados como lo hayas elegido. Si le introduces pady=distanciay  o padx=distanciax , es la distancia (en pixeles) de un elemento en vertical (pady) u horizontal (padx) al limite del contenedor
+
+ Para que un widget ocupe mas de una columna usamos el metodo grid:  variable.grid()     -> Dentro de los parentesisi introduces columnspan=cantidadcolumnasaocupar
+
+ Para poner el texto del boton con color usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces fg="colorquequieras". fg significa frontground
+
+ Para cambiar el tipo de texto del boton usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces font=("tipodeletra",tamañoletra)
+ 
+ Para que el boton haga cosas usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces command=lambda:funcionquehace siendo: funcionquehace una funcion que creas para que el boton haga lo que dice ella (la funcion va antes de esta instruccion)
+
+ 
+
+Para crear un widget radiobutton:  variable=Radiobutton(contenedor)       -> La variable la llamas como quieras y es para instanciar a la clase Radiobutton (como crear un objeto de clase Radiobutton). El contenedor es donde va a estar el Radiobutton (puede ser en un frame, en la raiz, dentro de otro).Son botones de seleccion para preguntas con respuesta unica, es decir, son excluyentes. Se usan con IntVar(). Todo lo del metodo config CREO que se puede meter en los parentesis separados por coma (,)
+
+
+Con el IntVar se establece una variable "global" (variable_global=IntVar()) la cual se introduce luego como variable=variable_global dentro de los parentesis del radiobutton 
+
+Para empaquetar el radiobutton (meterlo dentro del frame o de la raiz o de donde indiquemos en el contenedor) usamos el metodo pack:  variable.pack()
+
+Para poner el texto del radiobutton usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces text="textoquequieras"
+
+Para que funcionen de manera independiente, usamos el metodo config:   variable.config()    -> Dentro de los parentesis introduces value=n: siendo n=1 para el primer radiobutton, n=2 para el segundo, etc. Esto es lo que se almacena en la variable "global"
+
+Para rescatar el valor del radiobutton pulsado:  variable_global.get()
+
+Para que el radiobutton haga cosas usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces command=lambda:funcionquehace siendo: funcionquehace una funcion que creas para que el radiobutton haga lo que dice ella (la funcion va antes de esta instruccion)
+
+
+Para crear un widget checkbutton:  variable=Checkbutton(contenedor)       -> La variable la llamas como quieras y es para instanciar a la clase Checkbutton (como crear un objeto de clase Checkbutton). El contenedor es donde va a estar el Checkbutton (puede ser en un frame, en la raiz, dentro de otro). Son botones de seleccion para preguntas con respuesta multiple, es decir, no son excluyentes. Se usan con IntVar(). Todo lo del metodo config CREO que se puede meter en los parentesis separados por coma (,)
+
+
+Con el IntVar se establecen unas variables "globales" (variable_global1=IntVar(), variable_global2=IntVar(), etc), tantas como checkbuttons, las cuales se introducen luego como variable=variable_global1 dentro de los parentesis del checkbutton 
+
+Para empaquetar el checkbutton (meterlo dentro del frame o de la raiz o de donde indiquemos en el contenedor) usamos el metodo pack:  variable.pack()
+
+Para poner el texto del checkbutton usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces text="textoquequieras"
+
+Todos los checkbutton marcados almacenan un valor en las variable_global1, variable_global2, etc, y usamos el metodo config:  variable.config()   -> Dentro de los parentesis introducimos onvalue=n siendo: n=1 para todos los checkbutton
+
+Todos los checkbutton no marcados almacenan un valor en las variable_global1, variable_global2, etc, y usamos el metodo config:  variable.config()   -> Dentro de los parentesis introducimos offvalue=n siendo: n=0 para todos los checkbutton
+
+Para rescatar el valor del checkbutton pulsado:  variable_global1.get()
+
+Para que el checkbutton haga cosas usamos el metodo config:  variable.config()     -> Dentro de los parentesis introduces command=lambda:funcionquehace siendo: funcionquehace una funcion que creas para que el checkbutton haga lo que dice ella (la funcion va antes de esta instruccion)
+
+
+Para crear un widget menu:   variable=Menu(contenedor)     -> La variable la llamas como quieras y es para instanciar a la clase Menu (como crear un objeto de clase Menu). Sirve para crear un menu. El contenedor es donde va a estar el Menu (puede ser en un frame, en la raiz, dentro de otro). Todo lo del metodo config CREO que se puede meter en los parentesis separados por coma (,)
+
+
+Para establecer el menu en la raiz, se usa el metodo config pero con la RAIZ:  raiz.config()   -> Dentro de los parentesis introduces menu=variable siendo: variable la variable creada para el menu
+
+Para poner los elementos del menu, se crean "nuevos" objetos (archivo, editar, help, etc):  variableelementomenu1=Menu(variable)   -> La variable es la variable del menu que has creado antes, es decir, el contenedor seria el propio menu. Para borrar las lineas que salen (- - -) introduces entre los parentesis tearoff=0  
+
+Para ponerle un texto a ese menu usamos el metodo add_cascade:   variable.add_cascade()   -> Dentro del parentesis introduces label="texto" y menu="variableelemento1" siendo: texto lo que quieres que aparezca escrito y variablelemento1 la variable a la que se refiere en cada caso
+
+Para agregar opciones de submenu usamos add.command:  variableelemeto1.add_command()     -> Dentro del parentesis introduces label="texto" siendo: texto lo que quieres que aparezca escrito. Para poner mas de uno basta con hacer esto todas las veces que quieras
+
+Para poner barras y separar por grupos los submenus, nos situamos en el codigo donde quieres la separacion y usamos add_separator():  variableelemento1.add_separator()
+
+Para que el submenu te salte una ventana emergente usamos el metodo add_command:  variableelemento1.add_command()     -> Dentro de los parentesis introduces command=lambda:funcionventanaemergente siendo: funcionventanamergente una funcion que creas para que  (la funcion va antes de esta instruccion)
+
+
+
+Para crear una ventana emergente, hay que importar otra vez tkinter: from tkinter import messagebox 
+
+
+Se usa siempre dentro de una funcion creada solo para cada tipo de ventana:  def ventanaemergente():
+
+Para que la ventana sea de informacion usamos el metodo showinfo:  messagebox.showinfo()        -> Dentro del parentesis introduces dos string (texto entre comillas), la primera sera el titulo de la ventana y la otra el cuerpo 
+
+Para que la ventana sea de warning usamos el metodo showwarning:  messagebox.showwarning()        -> Dentro del parentesis introduces dos string (texto entre comillas), la primera sera el titulo de la ventana y la otra el cuerpo 
+
+Para que la ventana nos haga una preguenta usamos el metodo askquestion:  message.askquestion()      -> Dentro del parentesis introduces dos string (texto entre comillas), la primera sera el titulo de la ventana y la otra el cuerpo. Este metodo devuelve dos valores: yes si pulsas Si y no si pulsas No 
+
+Para que la ventana tenga botones de aceptar y cancelar usamos el metodo askokcancel:  message.askokcancel()  -> Dentro del parentesis introduces dos string (texto entre comillas), la primera sera el titulo de la ventana y la otra el cuerpo. Este metodo devuelve dos valores: True si pulsas aceptar y False si pulsas cancelar
+
+Para que la ventana nos permita reintentar usamos el metodo askretrycancel:  message.askretrycancel()    -> Dentro del parentesis introduces dos string (texto entre comillas), la primera sera el titulo de la ventana y la otra el cuerpo. Este metodo devuelve dos valores: True si pulsas reintentar y False si pulsas cancelar
+
+
+
+Para crear una ventana emergente para escoger un archivo y abrirlo, hay que importar otra vez tkinter: from tkinter import filedialog
+
+
+Se usa siempre dentro de una funcion creada solo para este tipo de ventana:  def ventanafichero():
+
+Para preguntar si abrir un archivo usamos el metodo askopenfilename:  filedialog.askopenfilename()        -> Dentro del parentesis introduces title="tituloquequieres", initialdir="direccioninicial" y filetypes=(("Texto1","*.extension1"),("Texto2","*.extension2")) siendo: direccioninicial donde quieres que se abra la ventana ("/") y filetypes que nos pide una tupla a la que minimo le tienes que meter dos posiciones. Este metodo devuelve la ruta 
+
+
+
+
+BASES DE DATOS
+
+Puede manipular la informacion de diferentes gestores de bases de datos (MySQL, Oracle, etc)
+Usamos SQLite, el cual forma parte integral del programa
+Los pasoas son:
+1) Abrir/Crear la conexion
+2) Crear un puntero (objeto que permite ejecutar consultas y manejar los datos)
+3) Ejecutar consulta
+4) Manejar los datos (Create, Read, Update y Delete)
+5) Cerrar el puntero
+6) Cerrar la conexion
+
+Necesitamos importar la libreria necesaria:   import sqlite3
+
+Para crear (o abrir una ya creada) una conexion usamos el metodo connect:  variableBBDD=sqlite.connect()   -> La variable la llamas como quieras. Dentro de los parentesis ponemos el nombre que queremos que tenga esa base de datos entre comillas
+
+Para cerrar la conexion usamos el metodo close:  variableBBDD.close()
+
+Para crear el puntero usamos el metodo cursor: variablePuntero=variableBBDD.cursor()
+
+Para crear la primera tabla en la conexion (BBDD) recien creada usamos el metodo execute:  variablePuntero.execute()   -> Dentro de los parentesis ira toda la instruccion SQL de creacion de tabla (CREATE TABLE) entre comillas
+
+
+Para insertar un registro a una tabla ya creada usamos el metodo execute:  variablePuntero.execute()   -> Dentro de los parentesis ira toda la instruccion SQL de insercion de tabla (INSERT INTO) entre comillas
+
+En las isntrucciones SQL dentro del python, utilizas unas comillas externas (que sera la parte python) y luego unas internas (que sera la parte SQL), estas internas tienen que ser simples (" (' ') ")
+
+La triple comilla simple (''') sirve para escribir una instruccion en muchas lineas de codigo en la parte de SQL
+
+Para verificar que quieres hacer ese tipo de modificacion (insertar registro a la tabla) hay que verificarla con el metodo commit:  variableBBDD.commit()
+
+
+Para insertar varios registros a la vez, creamos una lista en la que en su interior van tantas tuplas como registros queremos hacer, con la informacion de cada uno:  variablelista=[(),(),(),...]
+
+Y despues usamos el metodo executemany:  variablePuntero.executemany()    -> Dentro de los parentesis ira toda la instruccion SQL de insercion de tabla (INSERT INTO) entre comillas y separado por una coma, el nombre de la lista. En este caso pones tantos interrogantes (?) como campos quieras insertar (los campos totales a insertar sera al final la longitud que tendra cada tupla) en la parte de la instruccion SQL
+
+Para verificar que quieres hacer ese tipo de modificacion (insertar varios registros a la tabla) hay que verificarla con el metodo commit:  variableBBDD.commit()
+
+
+Para leer unos registros de una tabla (hacer una consulta) usamos el metodo execute:  variablePuntero.execute()     -> Dentro de los parentesis ira toda la instruccion SQL de lectura de tabla (SELECT) entre comillas
+
+Para ver los registros creamos una variable donde se almacenaran los registros y usamos el metodo fetchall:  variable=variablePuntero.fetchall()      -> Este metodo devuelve una lista por lo que esa variable creada sera una lista
+
+Y despues usamos un print para ver el contenido de la lista:  print(variable[:])   -> La lista tendra una tupla por cada registro de datos
+
+Tambien se puede imprimir el contenido de la lista usando un bucle for y asi se ve como si fuera una tabla:  for i in variable:
+														  print(i)           -> Te imprime la lista entera con las tuplas enteras.Si quieres que te imprima toda la lista pero solo un campo (una posicion de las tuplas):  print(i[indice])
+
+
+
+Para verificar que quieres hacer ese tipo de modificacion (leer varios registros a la tabla) hay que verificarla con el metodo commit:  variableBBDD.commit()
+
+
+Cada registro es importante que este identificado de forma unica mediante un campo clave, para crearlo se pone un PRIMARY KEY justo despues de poner el tipo de campo (en el campo que quieres que sea el clave) en la creacion de una tabla
+
+En cada registro no se puede repetir el campo clave, si intentas insertar un registro con un campo clave ya puesto, dara un error de IntegrityError
+
+Para la construccion e insercion de un campo clave se suele automatizar, es decir, que cada vez que metas un registro, este campo clave se vaya aumentando automaticamente. Se hace creando un campo de tipo entero autoincrementable: ID INTEGER PRIMARY KEY AUTOINCREMENT   -> El nombre del campo clave puedes elegirlo tu pero siempre se pone ID, ademas siempre tiene que ser tipo INTEGER. Ya no hara falta pasar cada vez los valores de este campo en cada registro (importante a la hora de hacer lo de las interrogaciones (?) ya que en la asociada al campo clave, no se pondria interrogacion si no NULL (NULL,?,?,?,...) 
+
+
+Para crear un campo o muchos en el que sus valores no se puedan repetir, es decir, una especia de segundo campo clave, agregamos al campo un UNIQUE justo detras de poner el tipo de campo (en el campo que quieres que sus valores sean todos diferentes) en la creacion de una tabla
+
+
+Para realizar una actualizacion de registros usamos el metodo execute:   variablePuntero.execute()   -> Dentro de los parentesis ira toda la instruccion SQL de insercion de tabla (UPDATE y SET) entre comillas
+
+
+Para borrar registros usamos el metodo execute:  variablePuntero.execute()   -> Dentro de los parentesis ira toda la instruccion SQL de insercion de tabla (DELETE FROM) entre comillas. Imprescindible usar el WHERE cuando usas el DELETE (porque si no te borra todo)
+
+
+
+
+FUNCIONES VARIAS:
+
+Funciones Lambda:
+
+Se llaman tambien funciones "on the go", "on demand", u "online"
+
+Todo lo que se puede hacer con una funcion lambda se puede hacer con una funcion normal, pero no al reves. Se suele hacer cuando la funcion es bastante sencilla (no tiene bucles ni condicionales, solo calculos)
+
+Para declarar una funcion lambda:  variable=lambda parametro1, parametro2:    -> La variable en verdad es el nombre de la funcion. Se pueden poner todos los parametros que quieras. Los dos puntos es como cuando pones en una funcion tradicional el return, y al lado el calculo que quieres
+
+Para llamarla es exactamente igual que una funcion normal:  variable()  -> Dentro de los parentesis iran los parametros 
+
+
+Funciones Filter:
+
+Podemos usar la programacion funcional con ellas. Verifican que los elementos de una secuencia (una lista) cumplen una condicion establecida devolviendo un iterador con los elementos que la cumplen
+
+ list(filter(funcioncreada, lista))    -> La funcion original ya esta creada, la filter solo la usa por parametros junto a la lista tambien creada. Usamos la funcion list para que le de formato lista
+
+
+Funciones Map:
+
+Esta funcion aplica otra funcion a cada elemento de una lista iterable (listas, tuplas) devolviendo otra lista con los resultados
+
+ map(llamadaafuncioncreada,lista)
+
+
+
+EXPRESIONES REGULARES
+
+Tambien llamadas regex. Son una secuencia de caracteres que forman un patron que realiza busquedas de texto. Sirven para el trabajo de texto
+
+Necesitamos importar la libreria necesaria:  import re
+
+
+Metodo search:  re.search("texto_buscado", lugar_donde_buscarlo)  -> Realiza una busqueda de un string y localizar donde coincida. El texto puede ser una palabra, caracter o frase. El lugar donde buscarlo puede ser una variable. Si devuelve un objeto es que esta, si devuelve un None es que no esta
+
+Metodo start: variable.start()  -> Te dice el numero de caracter donde comienza a encontrar el texto buscado dentro de un texto mayor. Se epieza por 0 y los espacios tambien cuentan
+
+Metodo end: variable.end()  -> Te dice el numero de caracter donde acaba de encontrar el texto buscado dentro de un texto mayor. Se epieza por 0 y los espacios tambien cuentan
+
+Metodo span: variable.span()  -> Te hace el metodo start y el end a la vez y lo almacena en una tupla
+
+Metodo findall:  re.findall("texto_buscado", lugar_donde_buscarlo)   -> Encuentra todas las coincidencias en un texto. El texto puede ser una palabra, caracter o frase. El lugar donde buscarlo puede ser una variable. Devuelve una lista con n veces la coincidencia. Si lo usas con len() te dice las n veces que coincide
+
+Metodo match:  re.match("patron_busqueda", lugar_donde_buscarlo)   -> Busca si hay coincidencias en un patron de busqueda al comienzo de una cadena de texto. Permite un tercer parametro, llamado flag, que ignora si es mayuscula o minuscula escribiendo:  re.IGNORECASE  Devuelve True si lo encuentra y False si no lo encuentra
+
+Metodo search:  re.search("patron_busqueda", lugar_donde_buscarlo)   -> Busca si hay coincidencias en un patron de busqueda en cualquier punto de una cadena de texto. Permite un tercer parametro, llamado flag, que ignora si es mayuscula o minuscula escribiendo:  re.IGNORECASE  Devuelve True si lo encuentra y False si no lo encuentra
+
+
+
+METACARACTERES
+
+Se usan con las expresiones regulares ya que es la manera mas optima
+ 
+ "^caracter" : Se llama ancla de comienzo. Para las coincidencias de texto que comienzan por ese caracter. Es como que te vale que coincida solo ese caracter, y si lo demas no coincide da igual (es como menos restrictivo) 
+
+ "caracter$" : Se llama ancla de final. Para las coincidencias de texto que finalizan por ese caracter. Es como que te vale que coincida solo ese caracter, y si lo demas no coincide da igual (es como menos restrictivo) 
+
+ "[caracteres]" : Se llama clases de caracteres. Te dice si estan los caracteres del interior en el texto, los cuales no tienen porque estar en ese orden en el texto. Si metes ^ dentro de los corchetes, hace la busqueda al contrario (como una negacion)
+
+ ".caracteres" : Se llama comodin punto. Donde el punto, iria cualquier letra. Sirve para cuando buscas palabras muy parecidas que difieren de una letra, te encuentre ambas 
+
+ "\d" : Se usa con la funcion match especialmente. Te dice si esa cadena comienza o no por un numero
+
+
+
+
+DECORADORES
+
+ Son funciones que añaden funcionalidades a otras funciones ya existentes en nuestro programa
+ Estan formados por 3 funciones(A,B y C) donde A recibe a B como parametro y devuelve C
+ Una funcion decorador devuelve otra funcion
+
+ Para declarar un decorador:  def nombre_funcion_A(nombre_funcion_B):     -> Declaras la funcion A y le pasas por parametro la funcion B
+				
+				def nombre_funcion_C():			  -> Declaras la funcion C dentro de la funcion A
+				
+					cuerpo_funcion_C
+				
+				return nombre_funcion_C                    -> Es lo que devuelve el decorador con un return
+
+
+Para indicar a que funcion se la aplicas:  @nombre_funcion_A
+                                           def funcion_a_decorar():
+				      	   	cuerpo funcion_a_decorar
+
+Despues siempre hay que llamar a la funcion a decorar: funcion_a_decorar()
+
+
+Si le metes parametros a la funcion a decorar, se hace igual que con una funcion normal, lo de declararla y lo de llamarla. 
+Lo que varia es la funcion interna de la decoradora, que en la zona de parametros de la declaracion pones: def nombre_funcion_C(*args)  -> Indica que puede recibir un numero indeterminado de parametros (funcionara igual de bien si recibe 1,2,3 o 30 parametros)
+Tambien varia que cuando llamas a nombre_funcion_B en el cuerpo de la interna, debes poner: nombre_funcion_B(*args)
+
+Si le metes parametros tipo clave valor a la funcion a decorar, se hace igual que con una funcion normal, lo de declararla y lo de llamarla. 
+Lo que varia es la funcion interna de la decoradora, que en la zona de parametros de la declaracion pones: def nombre_funcion_C(**kwargs)  -> Indica que puede recibir un numero indeterminado de parametros de tipo clave valor (funcionara igual de bien si recibe 1,2,3 o 30 parametros)
+Tambien varia que cuando llamas a nombre_funcion_B en el cuerpo de la interna, debes poner: nombre_funcion_B(**kwargs)
+
+Obviamente se puede combinar *args con **kwargs:  def nombre_funcion_C(*args,**kwargs)
+
+
+
+DOCUMENTACION
+
+Es incluir comentarios en las instrucciones para ayudar a entender que estamos haciendo
+
+Para mostrar tambien los comentarios por consola de una funcion:  help(nombre_funcion)
+
+Si la funcion (que seria un metodo) pertenece a una clase:   help(nombre_clase.nombre_funcion)
+
+Para mostrar los comentarios de toda la clase:  help(nombre_clase)
+
+
+Para las pruebas, que se pueden hacer todas las que quieras, en los comentarios de triple comilla (""") introducimos:  >>> llamada_a_funcion
+                                                                                                                       lo_que_debe_devolver
+
+Para realizar pruebas, importamos doctest:  import doctest
+
+Para hacer la prueba usamos la funcion testmod:  doctest.testmod()   -> Si no devuelve nada, es que esta bien lo que esperamos que debe devolver, pero si devuelve algo es que hay algun error
+
+Si la prueba contiene expresiones anidadas (bucles, if o cualquier cosa con identacion), pones tres puntos (...):   >>> declaracion_expresion_anidada
+								       						    ...	cuerpo_expresion_anidada          
+								       						    >>> llamada_a_funcion_
+								       						    lo_que_debe_devolver
+
+
+EJECUTABLES
+
+Para crear un ejecutable (.exe en windows): 
+
+ 1) Debemos instalar pyinstaller en nuestro OS (sistema operativo):  Pones en el buscador del ordenador: Simbolo del sistema -> Se abre una consola -> Introduces: pip install pyinstaller -> Enter
+
+ 2) Ahora copiamos la ruta donde se encuentra el archivo a crear su ejecutable en la consola del simbolo del sistema, poniendo primero cd y luego la ruta -> Enter
+
+ 3) Vas a la consola del simbolo del sistema, e introduces: pyinstaller --windowed --onefile nombre_archivo.py -> Enter      -> Si no metes el --windowed, cuando ejecutes el .exe va a salir detras la consola de la interfaz grafica. Si no metes --onefile, no te lo comprime todo en uno
+
+ 4) Nos fijamos en la carpeta que se crea llamada dist, que es la carpeta donde esta el .exe
+
+
+ Para agregar un icono al .exe, debes tener en la carpeta, donde el .py un archivo .ico (como cuando las interfaces), añades al paso 3): --icon=./nombre_icono.ico
+ 
+
